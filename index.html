@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial Manager</title>
+
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- CSS for the page -->
+    <style>
+        /* Resetting margins and paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #002a5c; /* Main blue color */
+            color: white;
+            width: 100vw; /* Full width of the viewport */
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .journal-name {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-right span {
+            margin-right: 10px;
+        }
+
+        nav {
+            background-color: #dfe3e6;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        nav ul li.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #dfe3e6;
+            border: 1px solid #ccc;
+            z-index: 1000;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-menu li {
+            margin-bottom: 10px;
+        }
+
+        .dropdown-menu li a {
+            color: black;
+        }
+
+        .back-arrow {
+            margin: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .back-arrow svg {
+            margin-right: 10px;
+        }
+
+        .table-container {
+            padding: 0;
+            border: none;
+            margin-top: 20px;
+            width: 80%; /* Adjusted table width to be 80% of the page */
+            margin: 0 auto; /* Center the table */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 12px 10px; /* 2px extra padding for breathing space */
+            text-align: left;
+        }
+
+        table th {
+            background-color: #002a5c; /* Same main blue color as header */
+            color: white;
+            font-weight: bold;
+            border: none;
+            position: relative; /* Positioning for icon */
+        }
+
+        table td {
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+        }
+
+        a {
+            color: blue; /* Set link text color to blue */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling for icons inside header */
+        th i {
+            margin-left: 5px;
+            color: #bbb;
+        }
+
+        .results-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px; /* Added space between Page info and Results per page */
+        }
+
+        .results-per-page select {
+            margin-left: 10px;
+        }
+
+        .logout {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logout:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with logo and user info -->
+    <header>
+        <div class="header-left">
+            <img src="images/Editorialmanagerlogo.png" alt="Journal Logo">
+            <span class="journal-name">Speech Communication</span>
+        </div>
+        <div class="header-right">
+            <span>Namra Fazal &#9662;</span>
+            <span>|</span>
+            <a href="#" class="logout">Logout</a>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li style="padding-left: 32px;"><a href="#">Home</a></li>
+            <li><a href="#">Main Menu</a></li>
+            <li><a href="#">Submit a Manuscript</a></li>
+            <li class="dropdown">
+                <a href="#">About &#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Journal Overview</a></li>
+                    <li><a href="#">Instructions For Authors</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Policies</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Help &#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">System Help</a></li>
+                    <li><a href="#">Video Tutorials</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Back arrow and page title -->
+    <div class="back-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M11.854 12.854a.5.5 0 0 1-.708 0L5.5 7.707 11.146 2.854a.5.5 0 1 1 .708.708L6.707 7.5l5.147 5.146a.5.5 0 0 1 0 .708z"/>
+        </svg>
+        <strong>Submissions with an Editorial Office Decision for Author</strong>
+    </div>
+
+    <!-- Results and table -->
+    <div class="table-container">
+        <!-- Page info and results per page (top) -->
+        <div class="results-info">
+            <span>Page: 1 of 1 (2 total completed submissions)</span>
+            <div class="results-per-page">
+                Results per page:
+                <select>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Table Section -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Action <i class="fas fa-sort"></i></th>
+                    <th class="manuscript">Manuscript Number <i class="fas fa-sort"></i></th>
+                    <th class="title">Title <i class="fas fa-sort"></i></th>
+                    <th>Initial Date Submitted <i class="fas fa-sort"></i></th>
+                    <th>Status Date <i class="fas fa-sort"></i></th>
+                    <th class="current-status">Current Status <i class="fas fa-sort"></i></th>
+                    <th class="disposition-date">Date Final Disposition Set <i class="fas fa-sort"></i></th>
+                    <th>Final Disposition <i class="fas fa-sort"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background-color: #f5f5f5;">
+                    <td><a href="https://www.editorialmanager.com/eir/default2.aspx" style="color: blue;">Action</a></td>
+                    <td class="manuscript">SPECOM-D-24-00359</td>
+                    <td class="title">Automated Sentiment Analysis of Linguistic and Emotional Dimensions in The Book of Dede Korkut and Fuzzy Logic</td>
+                    <td>Oct 9 2024 2:51AM</td>
+                    <td>Oct 9 2024 2:51AM</td>
+                    <td class="current-status">Completed-Accepted</td>
+                    <td>Sept 22, 2024</td>
+                    <td>Accepted</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Page info and results per page (bottom) -->
+        <div class="results-info">
+            <span>Page: 1 of 1 (2 total completed submissions)</span>
+            <div class="results-per-page">
+                Results per page:
+                <select>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
