@@ -1,15 +1,43 @@
 /* Global styling */
 body {
-    /* Lock responsiveness for desktop-only view */
+    /* Force entire layout to desktop width */
 body {
-    min-width: 1024px; /* Ensure the width doesn't go below desktop size */
-    overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
+    width: 1024px; /* Fix the body width to match desktop */
+    min-width: 1024px; /* Prevent shrinking below desktop size */
+    overflow-x: auto; /* Allow horizontal scrolling on smaller screens */
+    margin: 0 auto; /* Center content on larger devices */
 }
 
-.container {
-    width: 1024px; /* Fix the container width to desktop size */
-    margin: 0 auto; /* Center align the content on larger screens */
+/* Prevent header and navbar scattering */
+header, .navbar, .table-container, .content, .main-content {
+    width: 1024px; /* Fix width to desktop layout */
+    margin: 0 auto; /* Center align */
 }
+
+/* Prevent table elements from resizing */
+table {
+    width: 100%; /* Ensure table spans the defined width */
+    table-layout: fixed; /* Prevent dynamic resizing of table cells */
+}
+
+/* Lock all flex containers (header and nav) to fixed width */
+.header-left, .header-right, nav ul {
+    width: 100%; /* Ensure these match the fixed layout width */
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+/* Force dropdown menus to stay aligned */
+.dropdown-menu {
+    position: absolute;
+    min-width: 200px; /* Prevent shrinking of dropdowns */
+}
+
+/* Fix any elements that may adjust on small screens */
+img, svg {
+    max-width: 100%; /* Ensure images/icons don't overflow */
+    height: auto;
+}
+
 
     font-family: Arial, sans-serif;
     background-color: white; /* Make the entire page background white */
