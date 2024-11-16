@@ -1,5 +1,16 @@
 /* Global styling */
 body {
+    /* Lock responsiveness for desktop-only view */
+body {
+    min-width: 1024px; /* Ensure the width doesn't go below desktop size */
+    overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
+}
+
+.container {
+    width: 1024px; /* Fix the container width to desktop size */
+    margin: 0 auto; /* Center align the content on larger screens */
+}
+
     font-family: Arial, sans-serif;
     background-color: white; /* Make the entire page background white */
     margin: 0;
