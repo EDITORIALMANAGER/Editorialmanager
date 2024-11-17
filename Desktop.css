@@ -1,41 +1,57 @@
 /* Global styling */
-body {
-    /* Force entire layout to desktop width */
-body {
-    width: 1024px; /* Fix the body width to match desktop */
-    min-width: 1024px; /* Prevent shrinking below desktop size */
-    overflow-x: auto; /* Allow horizontal scrolling on smaller screens */
-    margin: 0 auto; /* Center content on larger devices */
+/* Force entire page to a fixed desktop layout */
+body, html {
+    width: 1024px; /* Fixed desktop width */
+    min-width: 1024px; /* Prevent shrinkage */
+    max-width: 1024px; /* Prevent exceeding the desktop layout width */
+    overflow-x: auto; /* Allow horizontal scrolling if necessary */
+    margin: 0 auto; /* Center page on mobile screens */
 }
 
-/* Prevent header and navbar scattering */
-header, .navbar, .table-container, .content, .main-content {
-    width: 1024px; /* Fix width to desktop layout */
-    margin: 0 auto; /* Center align */
+/* Fix header and navigation bar width */
+.header, .navbar, .content, .main-container, .main-content, .sidebar, .right-sidebar {
+    width: 1024px; /* Match desktop layout width */
+    margin: 0 auto; /* Center all elements */
 }
 
-/* Prevent table elements from resizing */
+/* Prevent scattering of header elements */
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Ensure no wrapping of elements */
+}
+
+/* Fix dropdowns and nav links */
+.navbar a {
+    display: inline-block; /* Prevent wrapping */
+    white-space: nowrap; /* Force items on a single line */
+}
+
+/* Ensure table behaves properly */
 table {
-    width: 100%; /* Ensure table spans the defined width */
-    table-layout: fixed; /* Prevent dynamic resizing of table cells */
+    table-layout: fixed; /* Prevent dynamic resizing of columns */
+    width: 100%; /* Make table span the container */
 }
 
-/* Lock all flex containers (header and nav) to fixed width */
-.header-left, .header-right, nav ul {
-    width: 100%; /* Ensure these match the fixed layout width */
-    flex-wrap: nowrap; /* Prevent wrapping */
-}
-
-/* Force dropdown menus to stay aligned */
-.dropdown-menu {
-    position: absolute;
-    min-width: 200px; /* Prevent shrinking of dropdowns */
-}
-
-/* Fix any elements that may adjust on small screens */
+/* Images and icons */
 img, svg {
-    max-width: 100%; /* Ensure images/icons don't overflow */
+    max-width: 100%; /* Prevent overflow */
     height: auto;
+}
+
+/* Adjust font sizes for better readability */
+body {
+    font-size: 14px; /* Keep the font size small to mimic desktop */
+}
+
+/* Remove any media queries that adjust layout for mobile */
+@media screen and (max-width: 1024px) {
+    * {
+        width: 1024px !important; /* Override all widths to match desktop */
+    }
+    body {
+        overflow-x: scroll; /* Enable scrolling for smaller devices */
+    }
 }
 
 

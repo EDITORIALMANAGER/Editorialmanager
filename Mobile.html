@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial Manager - Mobile</title>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Mobile-specific CSS -->
+    <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+
+    <!-- Header with logo and user info -->
+    <header class="mobile-header">
+        <div class="header-left">
+            <img src="../IMAGES/Editorialmanagerlogo.png" alt="Journal Logo">
+            <span class="journal-name">Journal of Experimental Social Psychology</span>
+        </div>
+        <div class="header-right">
+            <span>Alka Dutt &#9662;</span>
+            <span>|</span>
+            <a href="#" class="logout">Logout</a>
+        </div>
+    </header>
+
+    <!-- Collapsible Navigation Menu -->
+    <nav class="mobile-nav">
+        <button class="menu-toggle">☰ Menu</button>
+        <ul class="menu-items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Main Menu</a></li>
+            <li><a href="#">Submit a Manuscript</a></li>
+            <li class="dropdown">
+                <a href="#">About &#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Journal Overview</a></li>
+                    <li><a href="#">Instructions For Authors</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Policies</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Help &#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">System Help</a></li>
+                    <li><a href="#">Video Tutorials</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Page Title -->
+    <div class="page-title">
+        <strong>Submissions with an Editorial Office Decision for Author</strong>
+    </div>
+
+    <!-- Table Section -->
+    <div class="table-container">
+        <div class="results-info">
+            <span>Page: 1 of 1 (2 total completed submissions)</span>
+            <div class="results-per-page">
+                Results per page:
+                <select>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Manuscript #</th>
+                    <th>Title</th>
+                    <th>Initial Date Submitted</th>
+                    <th>Status Date</th>
+                    <th>Current Status</th>
+                    <th>Final Disposition Date</th>
+                    <th>Final Disposition</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://www.editorialmanager.com/edev/default2.aspx">Action</a></td>
+                    <td>JESP-S-24-00706</td>
+                    <td>ROLE OF INTUITIVE JUDGMENT IN MORAL AND AESTHETIC PERCEPTION.</td>
+                    <td>Nov 12, 2024</td>
+                    <td>Nov 12, 2024</td>
+                    <td>Completed-Accepted</td>
+                    <td>Nov 16, 2024</td>
+                    <td>Accepted</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

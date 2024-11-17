@@ -1,0 +1,143 @@
+/* Global Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 400px; /* Restrict layout width for smaller screens */
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #002a5c;
+    color: white;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.logout {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 5px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #002a5c;
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background-color: #002a5c;
+    color: white;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    display: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    position: relative;
+    background-color: #f0f0f0;
+    padding: 5px;
+}
+
+/* Back Arrow */
+.back-arrow {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.back-arrow svg {
+    margin-right: 5px;
+}
+
+/* Table */
+.table-container {
+    width: 100%;
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 8px;
+    font-size: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #002a5c;
+    color: white;
+    border: none;
+}
+
+table td {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+}
+
+.results-info {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.results-per-page select {
+    padding: 4px;
+    font-size: 12px;
+}
